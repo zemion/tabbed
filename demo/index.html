@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./style/tabbed.css">
+		<script type="text/javascript" src="./js/tabbed.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				cm = new ContainerManager(document.body);
+				con = cm.addNewContainer(new Tab('title'));
+				con.moveContainer(500, 200);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
