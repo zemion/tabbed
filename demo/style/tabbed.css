@@ -1,0 +1,257 @@
+html, body {
+  margin: 0;
+	padding: 0;
+}
+
+body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+div.wrap,
+div.wrap_active {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin: 0px 15px -8px 15px;
+	cursor: inherit;
+}
+
+div.tabwrap {
+	display: inline-block;
+	padding: 3px 10px 10px 10px;
+	margin: 0px 0px -7px 5px;
+	cursor: default;
+}
+
+div.tmp:after,
+div.tmp:before {
+    content: "";
+    position: absolute;      
+    top: 0px;
+    width: 20px;  
+    bottom: 0;  
+    z-index: 3;
+	-ms-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    border-radius: 0px 5px 0px 0px;
+/*    border-style: solid; */
+/*    border-width: 1px 1px 0px 0px; */
+    -webkit-box-shadow: 2px -2px 3px -2px black;
+    box-shadow: 2px -2px 3px -2px black;
+}
+
+div.tmp:after { right: -15px; }
+div.tmp:before {
+	left: -15px;
+    z-index: 1;
+	-ms-transform: skew(-20deg);
+	-moz-transform: skew(-20deg);
+    -webkit-transform: skew(-20deg);
+    border-radius: 5px 0px 0px 0px;
+/*    border-style: solid;  */
+/*    border-width: 1px 0px 0px 1px; */
+    box-shadow: -2px -2px 3px -2px black;
+}
+
+div.tmp2 {
+    min-width: 35px;
+	cursor: inherit;
+}
+
+div.tmp2,
+div.tmp:after,
+div.tmp:before,
+div.addtab {
+	background-color: #A2C8F6;
+    background-image: linear-gradient(top, #AFD0F8 100%, #A2C8F6 20%);
+	background-image: -o-linear-gradient(top, #AFD0F8 100%, #A2C8F6 20%);
+	background-image: -moz-linear-gradient(center top, #AFD0F8 0%, #A2C8F6 80%);
+	background-image: -webkit-linear-gradient(top, #AFD0F8 0%, #A2C8F6 80%);
+	background-image: -ms-linear-gradient(top, #AFD0F8 -100%, #A2C8F6 -20%);
+
+	background-image: -webkit-gradient(
+						linear,
+						left bottom,
+						left top,
+						color-stop(1, #AFD0F8),
+						color-stop(0.2, #A2C8F6));
+}
+
+div.wrap:hover div.tmp,
+div.wrap:hover div.tmp:after,
+div.wrap:hover div.tmp:before,
+div.addtab:hover {
+	background-color: #BED7F6;
+    background-image: linear-gradient(top, #C9DFFA 100%, #BED7F6 20%);
+	background-image: -o-linear-gradient(top, #C9DFFA 100%, #BED7F6 20%);
+	background-image: -moz-linear-gradient(center top, #C9DFFA 0%, #BED7F6 80%);
+	background-image: -webkit-linear-gradient(top, #C9DFFA 0%, #BED7F6 80%);
+	background-image: -ms-linear-gradient(top, #C9DFFA -100%, #BED7F6 -20%);
+
+	background-image: -webkit-gradient(
+						linear,
+						left bottom,
+						left top,
+						color-stop(1, #C9DFFA),
+						color-stop(0.2, #BED7F6));
+}
+
+div.wrap:hover div.tmp2:before { box-shadow: 1px 1px 0px 1px #BED7F6, inset -2px -2px 4px -3px black; }
+div.wrap:hover div.tmp2:after { box-shadow: -1px 1px 0px 1px #BED7F6, inset 2px -2px 4px -3px black; }
+
+div.wrap_active,
+div.wrap_active#moved {
+	margin-bottom: -10px;
+    border-bottom: 2px solid #F8F8F8;
+    z-index: 51;
+}
+
+div.wrap_active#moved {
+	position: absolute;
+}
+
+div.wrap_active div.tmp,
+div.wrap_active#moved div.tmp,
+div.wrap_active div.tmp:after,
+div.wrap_active#moved div.tmp:after,
+div.wrap_active div.tmp:before,
+div.wrap_active#moved div.tmp:before {
+	background-color: #F8F8F8;
+    background-image: linear-gradient(top, #FFFFFF 100%, #F8F8F8 20%);
+	background-image: -o-linear-gradient(top, #FFFFFF 100%, #F8F8F8 20%);
+	background-image: -moz-linear-gradient(center top, #FFFFFF 0%, #F8F8F8 80%);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F8F8F8 80%);
+	background-image: -ms-linear-gradient(top, #FFFFFF -100%, #F8F8F8 -20%);
+
+	background-image: -webkit-gradient(
+						linear,
+						left bottom,
+						left top,
+						color-stop(1, #FFFFFF),
+						color-stop(0.2, #F8F8F8));
+}
+
+div.wrap_active div.tmp:before, div.wrap_active#moved div.tmp:before { z-index: 101; bottom: -2px; }
+div.wrap_active div.tmp2:before, div.wrap_active#moved div.tmp2:before { z-index: 102; box-shadow: 2px 2px 0px 2px #F8F8F8, inset -2px -2px 4px -3px black;}
+div.wrap_active div.tmp:after, div.wrap_active#moved div.tmp:after { z-index: 103; bottom: -2px; }
+div.wrap_active div.tmp2:after, div.wrap_active#moved div.tmp2:after { z-index: 104; box-shadow: -2px 2px 0px 2px #F8F8F8, inset 2px -2px 4px -3px black; }
+
+div.tmp {
+    position: relative;
+    min-height: 25px;
+    padding: 2px 15px 0px 10px;
+    box-shadow: 0px -6px 3px -6px black;
+	cursor: inherit;
+}
+
+div.tmp2:before,
+div.tmp2:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 7px;
+    height: 5px;
+    background-color: transparent;
+    z-index: 2;
+    border-radius: 0px 0px 3px 0px;
+	-ms-transform: skew(-20deg);
+	-moz-transform: skew(-20deg);
+    -webkit-transform: skew(-20deg);
+/*    border-style: solid; */
+/*    border-width: 0px 1px 1px 0px; */
+    box-shadow: 1px 1px 0px 1px #A2C8F6, inset -2px -1px 5px -3px black;
+}
+
+div.tmp2:before { left: -26px; }
+div.tmp2:after {
+	right: -26px;
+	z-index: 4;  
+	border-radius: 0px 0px 0px 3px;  
+	-ms-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-webkit-transform: skew(20deg);
+/*	border-style: solid;  */
+/*	border-width: 0px 0px 1px 1px;  */
+	box-shadow: -1px 1px 0px 1px #A2C8F6, inset 2px -1px 5px -3px black;
+}
+
+div.content {
+	width: 100%;
+	height: 100%;
+	background-color: #F8F8F8;
+	z-index: 50;
+	position: absolute;
+	border-radius: 5px;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 3px black;
+	padding-top: 5px;
+}
+
+div.tmp > img {
+	width: 16px;
+	margin: 4px 2px -3px -12px;
+	position: relative;
+	z-index: 150;
+	background: red;
+}
+
+span.close {
+	font-family: sans-serif;
+	line-height: 1.1em;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 5px;
+	right: -9px;
+	z-index: 40;
+	border-radius: 10px;
+	font-size: 0.8em;
+	font-weight: bolder;
+	text-align: center;
+	color: grey;
+}
+
+div.wrap_active span.close,
+div.wrap_active#moved span.close {
+	z-index: 150;
+}
+
+span.close:hover {
+	background-color: #F39F94;
+	box-shadow: inset 0px 1px 3px -1px black;
+	text-shadow: 0px 1px 1px black;
+	color: white;
+}
+
+div.addtab {
+	display: inline-block;
+	width: 27px;
+	height: 16px;
+
+	-ms-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-webkit-transform: skew(20deg);
+	margin-left: -4px;
+	margin-bottom: 1px;
+	margin-top: 8px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 3px 0px black;
+}
+
+div.container {
+	position: absolute;
+	width: 600px;
+	height: 100px;
+	margin-top: 30px;
+}
+
+div.twc {
+	margin-top: -30px;
+}
+
+div#standin {
+	display: inline-block; float: right; min-height: 19px; height: 100%; 
+}
